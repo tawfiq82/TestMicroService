@@ -20,7 +20,7 @@ namespace TestMicroService.WebApi.Controllers
 	using TestMicroService.Queries.Contracts.Responses;
 	using TestMicroService.WebApi.Model;
 
-	[RoutePrefix("api/testmicroservice/1.0/test")]
+	[RoutePrefix("api/testmicroservice/1.0/tests")]
 	public class TestController : ApiController
 	{
 		private readonly ICommandBus _commandBus;
@@ -40,6 +40,7 @@ namespace TestMicroService.WebApi.Controllers
 		}
 
 		[HttpGet]
+		[Route("")]
 		public async Task<QueryTestsResponse> QueryTests()
 		{
 			var query = new QueryTests(Request.GetQueryOptions());
