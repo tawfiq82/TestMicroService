@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.DomainData
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.ReadModel", "TestMicroService.ReadModel\TestMicroService.ReadModel.csproj", "{C6B562A1-0D05-4D11-82DE-22B3816D3898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.Service", "TestMicroService.Service\TestMicroService.Service.csproj", "{F3C44612-7B1F-4EDF-9644-0EE4BF12B292}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.WebApi", "TestMicroService.WebApi\TestMicroService.WebApi.csproj", "{EF12A0E1-393E-4625-922E-7EE8402CDE69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.Commands.Contracts", "Contracts\TestMicroService.Commands.Contracts\TestMicroService.Commands.Contracts.csproj", "{8CA8B5E6-6695-4217-B89E-46F89895B047}"
@@ -22,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.Events.Contracts", "Contracts\MicroService.Events.Contracts\TestMicroService.Events.Contracts.csproj", "{304B1101-0AE5-4004-943D-A2FAF34627B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.Queries.Contracts", "TestMicroService.Queries.Contracts\TestMicroService.Queries.Contracts.csproj", "{4F028B86-161A-4AEF-B4A2-0596C3168E1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.OWIN", "TestMicroService.OWIN\TestMicroService.OWIN.csproj", "{8804A3F6-26B0-47D6-95DE-49E686E3ADCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMicroService.Toolset.Azure.DocumentDb", "TestMicroService.Toolset.Azure.DocumentDb\TestMicroService.Toolset.Azure.DocumentDb.csproj", "{EDF00F0C-092F-42FF-826B-B1E990EC9BCD}"
 EndProject
@@ -45,10 +45,6 @@ Global
 		{C6B562A1-0D05-4D11-82DE-22B3816D3898}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6B562A1-0D05-4D11-82DE-22B3816D3898}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6B562A1-0D05-4D11-82DE-22B3816D3898}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3C44612-7B1F-4EDF-9644-0EE4BF12B292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3C44612-7B1F-4EDF-9644-0EE4BF12B292}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3C44612-7B1F-4EDF-9644-0EE4BF12B292}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3C44612-7B1F-4EDF-9644-0EE4BF12B292}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF12A0E1-393E-4625-922E-7EE8402CDE69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF12A0E1-393E-4625-922E-7EE8402CDE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF12A0E1-393E-4625-922E-7EE8402CDE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,6 +61,10 @@ Global
 		{4F028B86-161A-4AEF-B4A2-0596C3168E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F028B86-161A-4AEF-B4A2-0596C3168E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F028B86-161A-4AEF-B4A2-0596C3168E1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8804A3F6-26B0-47D6-95DE-49E686E3ADCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8804A3F6-26B0-47D6-95DE-49E686E3ADCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8804A3F6-26B0-47D6-95DE-49E686E3ADCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8804A3F6-26B0-47D6-95DE-49E686E3ADCD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDF00F0C-092F-42FF-826B-B1E990EC9BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EDF00F0C-092F-42FF-826B-B1E990EC9BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDF00F0C-092F-42FF-826B-B1E990EC9BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU

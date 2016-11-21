@@ -10,6 +10,7 @@ namespace TestMicroService.WebApi.App_Start
 	using DimensionData.Toolset.Consul;
 	using DimensionData.Toolset.DependencyInjection;
 	using DimensionData.Toolset.Initialization;
+	using DimensionData.Toolset.MassTransit;
 	using DimensionData.Toolset.SerilogLogger;
 	using DimensionData.Toolset.SimpleInjector;
 	using DimensionData.Toolset.Vault;
@@ -52,17 +53,16 @@ namespace TestMicroService.WebApi.App_Start
 			app.UseSimpleInjector(containerBuilder =>
 			{
 				containerBuilder.LoadModule<CqrsModule>();
-				containerBuilder.LoadModule<DomainModule>();
+				// containerBuilder.LoadModule<DomainModule>();
 				// containerBuilder.LoadModule<DomainDataModule>();
-				containerBuilder.LoadModule<ReadModelModule>();
+				//containerBuilder.LoadModule<ReadModelModule>();
 			});
 
 			app.UseSerilogFileLogger(ServiceName, "test/logging");
 
-			app.UseConsulServiceDiscovery();
-			app.UseConsulConfigurationStore();
-			app.UseVaultSecureConfigurationStore("test/vault");
-
+			app.UseAppSettingsConfigurationStore();
+			app.UseAppSettingsSecureConfigurationStore();
+			app.UseMassTransit(config => config.AddInMemoryHost());
 		
 			app.UseWebApi(config =>
 			{
