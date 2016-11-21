@@ -62,7 +62,7 @@ namespace TestMicroService.WebApi.App_Start
 
 			app.UseAppSettingsConfigurationStore();
 			app.UseAppSettingsSecureConfigurationStore();
-			app.UseMassTransit(config => config.AddInMemoryHost());
+			// app.UseMassTransit(config => config.AddInMemoryHost());
 		
 			app.UseWebApi(config =>
 			{

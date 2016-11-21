@@ -33,6 +33,7 @@ namespace TestMicroService.WebApi.Controllers
 		}
 
 		[HttpPost]
+		[Route("")]
 		public async Task<IHttpActionResult> CreateTest(TestConfig config)
 		{
 			await _commandBus.Send(new CreateTest(config.Name));
