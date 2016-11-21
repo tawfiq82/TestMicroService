@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using TestMicroService.Domain.Respositories;
 
 namespace TestMicroService.Domain.CommandHandlers
 {
@@ -11,7 +8,6 @@ namespace TestMicroService.Domain.CommandHandlers
 
 	using TestMicroService.Commands.Contracts;
 	using TestMicroService.Domain.Entities;
-	using TestMicroService.Domain.Repositories;
 
 	public class CreateTestHandler : ICommandHandler<CreateTest>
 	{

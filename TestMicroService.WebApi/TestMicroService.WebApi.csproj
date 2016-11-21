@@ -193,6 +193,10 @@
       <Project>{8ca8b5e6-6695-4217-b89e-46f89895b047}</Project>
       <Name>TestMicroService.Commands.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestMicroService.DomainData\TestMicroService.DomainData.csproj">
+      <Project>{8becb4b0-a9a6-4ac0-ae72-9b7fbce4b984}</Project>
+      <Name>TestMicroService.DomainData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestMicroService.Domain\TestMicroService.Domain.csproj">
       <Project>{d5548bab-786d-4271-a4c7-23f426ef4481}</Project>
       <Name>TestMicroService.Domain</Name>

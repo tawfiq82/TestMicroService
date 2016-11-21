@@ -60,7 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentDbDomainEvent.cs" />
+    <Compile Include="EventSourcing\DocumentDbDomainEvent.cs" />
     <Compile Include="DocumentDbEventStore.cs" />
     <Compile Include="EventSourcing\JsonContractResolver.cs" />
     <Compile Include="EventSourcing\JsonObjectSerializer.cs" />

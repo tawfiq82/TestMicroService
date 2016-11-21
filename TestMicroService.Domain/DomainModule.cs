@@ -40,7 +40,7 @@ namespace TestMicroService.Domain
 				// typeof(ReadCommittedTransactionCommandDecorator<>)
 			};
 
-			// builder.RegisterCommandHandlerWithDecorators<CreateTest, CreateTestHandler>(commonDecorators);
+			builder.RegisterCommandHandlerWithDecorators<CreateTest, CreateTestHandler>(commonDecorators);
 		}
 	}
 }

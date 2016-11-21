@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestMicroService.Domain.Entities
 {
@@ -27,12 +23,12 @@ namespace TestMicroService.Domain.Entities
 		{
 			Check.NotNullOrWhiteSpace(name, nameof(name));
 
-			ApplyChange(new TestCreated(name));
+			ApplyChange(new TestCreated(Guid.NewGuid(), name));
 		}
 
 		private void Apply(TestCreated @event)
 		{
-			Id = Guid.NewGuid();
+			Id = @event.Id;
 			Name = @event.Name;
 		}
 	}

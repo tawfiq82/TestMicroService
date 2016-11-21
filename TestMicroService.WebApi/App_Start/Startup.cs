@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestMicroService.DomainData;
 
 namespace TestMicroService.WebApi.App_Start
 {
@@ -23,10 +24,10 @@ namespace TestMicroService.WebApi.App_Start
 
 	public class Startup
 	{
-        /// <summary>
-        /// The service name.
-        /// </summary>
-        public const string ServiceName = "Test";
+		/// <summary>
+		/// The service name.
+		/// </summary>
+		public const string ServiceName = "Test";
 
 		/// <summary>
 		/// The service description.
@@ -53,8 +54,8 @@ namespace TestMicroService.WebApi.App_Start
 			app.UseSimpleInjector(containerBuilder =>
 			{
 				containerBuilder.LoadModule<CqrsModule>();
-				// containerBuilder.LoadModule<DomainModule>();
-				// containerBuilder.LoadModule<DomainDataModule>();
+				containerBuilder.LoadModule<DomainModule>();
+				containerBuilder.LoadModule<DomainDataModule>();
 				//containerBuilder.LoadModule<ReadModelModule>();
 			});
 
@@ -63,10 +64,11 @@ namespace TestMicroService.WebApi.App_Start
 			app.UseAppSettingsConfigurationStore();
 			app.UseAppSettingsSecureConfigurationStore();
 			// app.UseMassTransit(config => config.AddInMemoryHost());
-		
+
 			app.UseWebApi(config =>
 			{
 				config.UseSwagger();
+				config.UseJwtBearerAuthentication("test/authentication");
 			});
 
 			app.UseSimpleInjectorWebApiDependencyResolver();

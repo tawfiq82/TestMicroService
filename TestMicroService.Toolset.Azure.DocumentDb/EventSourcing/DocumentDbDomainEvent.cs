@@ -2,12 +2,11 @@
 using DimensionData.Toolset.EventSourcing;
 using DimensionData.Toolset.Validation;
 using Newtonsoft.Json;
-using TestMicroService.Toolset.Azure.DocumentDb.EventSourcing;
 
-namespace TestMicroService.Toolset.Azure.DocumentDb
+namespace TestMicroService.Toolset.Azure.DocumentDb.EventSourcing
 {
     /// <summary>
-    ///     An abstract base class for domain events using Entity Framework data context.
+    ///     An abstract base class for domain events.
     /// </summary>
     public abstract class DocumentDbDomainEvent
     {
