@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestMicroService.Domain
 {
 	using DimensionData.Toolset.Cqrs.Decorators;
 	using DimensionData.Toolset.Cqrs.Messaging;
 	using DimensionData.Toolset.DependencyInjection;
-
-	using MicroService.Events.Contracts;
 
 	using TestMicroService.Commands.Contracts;
 	using TestMicroService.Domain.CommandHandlers;
@@ -41,6 +35,8 @@ namespace TestMicroService.Domain
 			};
 
 			builder.RegisterCommandHandlerWithDecorators<CreateTest, CreateTestHandler>(commonDecorators);
+			builder.RegisterCommandHandlerWithDecorators<UpdateTest, UpdateTestHandler>(commonDecorators);
+			builder.RegisterCommandHandlerWithDecorators<DeleteTest, DeleteTestHandler>(commonDecorators);
 		}
 	}
 }

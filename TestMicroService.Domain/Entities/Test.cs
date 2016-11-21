@@ -1,19 +1,18 @@
 ﻿using System;
+using DimensionData.Toolset.EventSourcing;
+using DimensionData.Toolset.Validation;
+using MicroService.Events.Contracts;
 
 namespace TestMicroService.Domain.Entities
 {
-	using DimensionData.Toolset.EventSourcing;
-	using DimensionData.Toolset.Validation;
-
-	using MicroService.Events.Contracts;
-
 	public class Test : EventSourcedAggregateRoot
 	{
-
 		/// <summary>
 		///     The name of the organization
 		/// </summary>
 		public string Name { get; private set; }
+
+		public bool IsDeleted { get; private set; }
 
 		private Test()
 		{
@@ -26,10 +25,31 @@ namespace TestMicroService.Domain.Entities
 			ApplyChange(new TestCreated(Guid.NewGuid(), name));
 		}
 
+		public void Update(Guid testId, string name)
+		{
+			Check.NotNullOrWhiteSpace(name, nameof(name));
+			ApplyChange(new TestUpdated(Guid.NewGuid(), name));
+		}
+
+		public void Delete(Guid testId)
+		{
+			ApplyChange(new TestDeleted(Guid.NewGuid()));
+		}
+
 		private void Apply(TestCreated @event)
 		{
 			Id = @event.Id;
 			Name = @event.Name;
+		}
+
+		private void Apply(TestUpdated @event)
+		{
+			Name = @event.Name;
+		}
+
+		private void Apply(TestDeleted @event)
+		{
+			IsDeleted = @event.IsDeleted;
 		}
 	}
 }

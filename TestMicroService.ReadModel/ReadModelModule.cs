@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestMicroService.ReadModel
+﻿namespace TestMicroService.ReadModel
 {
 	using DimensionData.Toolset.Cqrs.Decorators;
 	using DimensionData.Toolset.DependencyInjection;

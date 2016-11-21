@@ -47,6 +47,8 @@
     <Compile Include="TestCreated.cs" />
     <Compile Include="DomainEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDeleted.cs" />
+    <Compile Include="TestUpdated.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

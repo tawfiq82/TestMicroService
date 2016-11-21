@@ -1,11 +1,8 @@
-﻿using DimensionData.Toolset.Domain;
-using DimensionData.Toolset.EventSourcing;
-using Microsoft.Azure.Documents.Client;
+﻿using Microsoft.Azure.Documents.Client;
 using TestMicroService.Domain.Entities;
 using TestMicroService.Domain.Respositories;
 using TestMicroService.DomainData.DataModel;
 using TestMicroService.Toolset.Azure.DocumentDb;
-using TestMicroService.Toolset.Azure.DocumentDb.EventSourcing;
 
 namespace TestMicroService.DomainData.Respositories
 {

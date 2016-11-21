@@ -1,14 +1,12 @@
 ﻿using System.Threading.Tasks;
 using TestMicroService.Domain.Respositories;
+using DimensionData.Toolset.Cqrs;
+using DimensionData.Toolset.Validation;
+using TestMicroService.Commands.Contracts;
+using TestMicroService.Domain.Entities;
 
 namespace TestMicroService.Domain.CommandHandlers
 {
-	using DimensionData.Toolset.Cqrs;
-	using DimensionData.Toolset.Validation;
-
-	using TestMicroService.Commands.Contracts;
-	using TestMicroService.Domain.Entities;
-
 	public class CreateTestHandler : ICommandHandler<CreateTest>
 	{
 		private readonly ITestStore _testStore;
