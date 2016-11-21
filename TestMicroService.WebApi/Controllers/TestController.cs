@@ -76,7 +76,7 @@ namespace TestMicroService.WebApi.Controllers
 		/// </summary>
 		/// <returns></returns>
 		[HttpGet]
-		[Route("")]
+		// [Route("")]
 		public async Task<QueryTestsResponse> QueryTests()
 		{
 			var query = new QueryTests(Request.GetQueryOptions());
