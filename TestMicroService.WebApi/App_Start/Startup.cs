@@ -60,7 +60,6 @@ namespace TestMicroService.WebApi.App_Start
 			app.UseWebApi(config =>
 			{
 				config.UseSwagger();
-				config.UseJwtBearerAuthentication("test/authentication");
 			});
 
 			app.UseSimpleInjectorWebApiDependencyResolver();

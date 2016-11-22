@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Documents.Client;
+﻿using DimensionData.Toolset.Domain;
+using Microsoft.Azure.Documents.Client;
 using TestMicroService.Domain.Entities;
 using TestMicroService.Domain.Respositories;
 using TestMicroService.DomainData.DataModel;
@@ -15,9 +16,9 @@ namespace TestMicroService.DomainData.Respositories
 		DocumentDbEventStore<Test, TestEvent>,
 		ITestStore
 	{
-		// TODO: Add support for domain events and snapshot
+		// TODO: Add support for snapshot
 		// public TestStore(DocumentClient client, IDomainEventBus domainEventBus, ISnapshotRepository<Test> snapshotRepository) : base(client, domainEventBus, snapshotRepository)
-		public TestStore(DocumentClient client) : base(client)
+		public TestStore(DocumentClient client, IDomainEventBus domainEventBus) : base(client, domainEventBus)
 		{
 		}
 	}
