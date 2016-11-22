@@ -20,7 +20,7 @@ namespace TestMicroService.Domain.CommandHandlers
 		{
 			Check.NotNull(command, nameof(command));
 
-			var test = new Test(command.Name);
+			var test = new Test(command.Name, command.Description, command.TestType);
 			await this._testStore.Save(test);
 		}
 	}

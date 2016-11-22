@@ -40,7 +40,7 @@ namespace TestMicroService.WebApi.Controllers
 		[Route("")]
 		public async Task<IHttpActionResult> CreateTest(TestConfig config)
 		{
-			await _commandBus.Send(new CreateTest(config.Name));
+			await _commandBus.Send(new CreateTest(config.Name, config.Description, config.TestType));
 			return StatusCode(HttpStatusCode.Created);
 		}
 
@@ -54,7 +54,7 @@ namespace TestMicroService.WebApi.Controllers
 		[Route("{testId}")]
 		public async Task<IHttpActionResult> UpdateTest(Guid testId, TestConfig config)
 		{
-			await _commandBus.Send(new UpdateTest(testId, config.Name));
+			await _commandBus.Send(new UpdateTest(testId, config.Name, config.Description, config.TestType));
 			return StatusCode(HttpStatusCode.Created);
 		}
 

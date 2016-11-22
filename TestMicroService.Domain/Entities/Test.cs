@@ -5,6 +5,8 @@ using MicroService.Events.Contracts;
 
 namespace TestMicroService.Domain.Entities
 {
+	using TestMicroService.Shared.Contracts.Enums;
+
 	public class Test : EventSourcedAggregateRoot
 	{
 		/// <summary>
@@ -14,21 +16,25 @@ namespace TestMicroService.Domain.Entities
 
 		public bool IsDeleted { get; private set; }
 
+		public string Description { get; private set; }
+
+		public TestType TestType { get; private set; }
+
 		private Test()
 		{
 
 		}
-		public Test(string name) : this()
+		public Test(string name, string description, TestType testType) : this()
 		{
 			Check.NotNullOrWhiteSpace(name, nameof(name));
 
-			ApplyChange(new TestCreated(Guid.NewGuid(), name));
+			ApplyChange(new TestCreated(Guid.NewGuid(), name, description, testType));
 		}
 
-		public void Update(Guid testId, string name)
+		public void Update(Guid testId, string name, string description, TestType testType)
 		{
 			Check.NotNullOrWhiteSpace(name, nameof(name));
-			ApplyChange(new TestUpdated(testId, name));
+			ApplyChange(new TestUpdated(testId, name, description, testType));
 		}
 
 		public void Delete(Guid testId)
@@ -40,11 +46,15 @@ namespace TestMicroService.Domain.Entities
 		{
 			Id = @event.Id;
 			Name = @event.Name;
+			Description = @event.Description;
+			TestType = @event.TestType;
 		}
 
 		private void Apply(TestUpdated @event)
 		{
 			Name = @event.Name;
+			Description = @event.Description;
+			TestType = @event.TestType;
 		}
 
 		private void Apply(TestDeleted @event)

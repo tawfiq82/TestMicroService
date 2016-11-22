@@ -25,7 +25,7 @@ namespace TestMicroService.Domain.CommandHandlers
 			if (test == null)
 				throw new TestNotFoundException(command.Id);
 
-			test.Update(command.Id, command.Name);
+			test.Update(command.Id, command.Name, command.Description, command.TestType);
 			await this._testStore.Save(test);
 		}
 	}
