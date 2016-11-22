@@ -14,6 +14,7 @@ namespace TestMicroService.WebApi.Controllers
 	/// <summary>
 	/// The API controller for managing test.
 	/// </summary>
+	[AllowAnonymous]
 	[RoutePrefix("api/testmicroservice/1.0/tests")]
 	public class TestController : ApiController
 	{
