@@ -66,6 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventHandlers\TestDeletedHandler.cs" />
+    <Compile Include="EventHandlers\TestUpdatedHandler.cs" />
+    <Compile Include="Exceptions\TestNotFoundException.cs" />
+    <Compile Include="QueryHandlers\GetTestHandler.cs" />
     <Compile Include="ReadModelContext.cs" />
     <Compile Include="DataModel\Test.cs" />
     <Compile Include="EventHandlers\TestCreatedHandler.cs" />
@@ -81,6 +85,10 @@
     <ProjectReference Include="..\Contracts\MicroService.Events.Contracts\TestMicroService.Events.Contracts.csproj">
       <Project>{304b1101-0ae5-4004-943d-a2faf34627b4}</Project>
       <Name>TestMicroService.Events.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contracts\TestMicroService.Shared.Contracts\TestMicroService.Shared.Contracts.csproj">
+      <Project>{61db1779-715a-45ee-a239-3352b2fbee20}</Project>
+      <Name>TestMicroService.Shared.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestMicroService.Queries.Contracts\TestMicroService.Queries.Contracts.csproj">
       <Project>{4f028b86-161a-4aef-b4a2-0596c3168e1e}</Project>

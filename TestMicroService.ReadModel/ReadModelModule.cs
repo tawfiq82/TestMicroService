@@ -27,6 +27,8 @@
 		private void RegisterEventHandlers(IDependencyContainerBuilder builder)
 		{
 			builder.RegisterDomainEventHandler<TestCreated, TestCreatedHandler>();
+			builder.RegisterDomainEventHandler<TestUpdated, TestUpdatedHandler>();
+			builder.RegisterDomainEventHandler<TestDeleted, TestDeletedHandler>();
 		}
 
 		private void RegisterQueryHandlers(IDependencyContainerBuilder builder)
@@ -34,7 +36,7 @@
 			var commonDecorators = new[]
 		   {
 				typeof(LogQueryDecorator<,>),
-				typeof(AuthorizationQueryDecorator<,>),
+				// typeof(AuthorizationQueryDecorator<,>),
 				typeof(ValidationQueryDecorator<,>)
 			};
 
@@ -42,6 +44,9 @@
 				.RegisterQueryHandlerWithDecorators
 				<QueryTests, QueryTestsResponse, QueryTestsHandler>(commonDecorators);
 
+			builder
+				.RegisterQueryHandlerWithDecorators
+				<GetTest, GetTestResponse, GetTestHandler>(commonDecorators);
 		}
 	}
 }

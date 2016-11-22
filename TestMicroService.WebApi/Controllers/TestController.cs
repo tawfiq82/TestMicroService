@@ -76,7 +76,19 @@ namespace TestMicroService.WebApi.Controllers
 		/// </summary>
 		/// <returns></returns>
 		[HttpGet]
-		// [Route("")]
+		[Route("{testId}")]
+		public async Task<GetTestResponse> GetTest(Guid testId)
+		{
+			var query = new GetTest(testId);
+			return await _queryProcessor.ProcessQuery<GetTest, GetTestResponse>(query);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		[HttpGet]
+		//[Route("")]
 		public async Task<QueryTestsResponse> QueryTests()
 		{
 			var query = new QueryTests(Request.GetQueryOptions());

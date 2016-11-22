@@ -1,16 +1,14 @@
 ﻿using System.Threading.Tasks;
+using System.Linq;
+using AutoMapper;
+using DimensionData.Toolset.Cqrs;
+using DimensionData.Toolset.Querying;
+using DimensionData.Toolset.Validation;
+using TestMicroService.Queries.Contracts.Queries;
+using TestMicroService.Queries.Contracts.Responses;
 
 namespace TestMicroService.ReadModel.QueryHandlers
 {
-	using AutoMapper;
-
-	using DimensionData.Toolset.Cqrs;
-	using DimensionData.Toolset.Querying;
-	using DimensionData.Toolset.Validation;
-
-	using TestMicroService.Queries.Contracts.Queries;
-	using TestMicroService.Queries.Contracts.Responses;
-
 	internal sealed class QueryTestsHandler : IQueryHandler<QueryTests, QueryTestsResponse>
 	{
 		private readonly ReadModelDataContext _modelContext;
@@ -34,6 +32,7 @@ namespace TestMicroService.ReadModel.QueryHandlers
 			Check.NotNull(query, nameof(query));
 
 			var queryResult = await _modelContext.Tests
+										.Where(x => !x.IsDeleted)
 										.ExecuteQueryOptionsAsync(query.Options);
 
 			return Mapper.Map<QueryTestsResponse>(queryResult);

@@ -16,7 +16,7 @@ namespace TestMicroService.ReadModel
 	internal sealed class ReadModelDataContext : DataContext
 	{
 		internal const string Schema = "ReadModel";
-		private const string ConnectionStringPath = "s4b/database";
+		private const string ConnectionStringPath = "test/database";
 
 		public ReadModelDataContext(ISecureConfigurationStore configurationStore)
 			: base(GetConnectionString(configurationStore))

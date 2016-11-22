@@ -12,6 +12,7 @@ namespace TestMicroService.WebApi.App_Start
 	using Owin;
 
 	using TestMicroService.Domain;
+	using TestMicroService.ReadModel;
 
 	public class Startup
 	{
@@ -47,7 +48,7 @@ namespace TestMicroService.WebApi.App_Start
 				containerBuilder.LoadModule<CqrsModule>();
 				containerBuilder.LoadModule<DomainModule>();
 				containerBuilder.LoadModule<DomainDataModule>();
-				//containerBuilder.LoadModule<ReadModelModule>();
+				containerBuilder.LoadModule<ReadModelModule>();
 			});
 
 			app.UseSerilogFileLogger(ServiceName, "test/logging");
