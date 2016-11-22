@@ -28,12 +28,12 @@ namespace TestMicroService.Domain.Entities
 		public void Update(Guid testId, string name)
 		{
 			Check.NotNullOrWhiteSpace(name, nameof(name));
-			ApplyChange(new TestUpdated(Guid.NewGuid(), name));
+			ApplyChange(new TestUpdated(testId, name));
 		}
 
 		public void Delete(Guid testId)
 		{
-			ApplyChange(new TestDeleted(Guid.NewGuid()));
+			ApplyChange(new TestDeleted(testId));
 		}
 
 		private void Apply(TestCreated @event)

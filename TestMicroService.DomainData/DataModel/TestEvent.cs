@@ -21,7 +21,7 @@ namespace TestMicroService.DomainData.DataModel
 		/// <summary>
 		/// Prevents a default instance of the <see cref="TestEvent"/> class from being created.
 		/// </summary>
-		private TestEvent()
+		public TestEvent()
 		{
 		}
 	}

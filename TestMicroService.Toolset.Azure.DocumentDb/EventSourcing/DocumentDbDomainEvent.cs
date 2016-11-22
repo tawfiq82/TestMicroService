@@ -61,7 +61,7 @@ namespace TestMicroService.Toolset.Azure.DocumentDb.EventSourcing
         /// <summary>
         ///     Gets the aggregate version.
         /// </summary>
-        public int AggregateVersion { get; private set; }
+        public int AggregateVersion { get; set; }
 
         /// <summary>
         ///     Gets or sets the payload.
